@@ -5,6 +5,7 @@ project(blackboard CXX)
 find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(GTKMM gtkmm-3.0)
+pkg_check_modules(QALCULATE libqalculate)
 
 file(GLOB MAIN_SRC src/*.cc)
 
@@ -19,8 +20,13 @@ else()
 endif()
 
 include_directories(${GTKMM_INCLUDE_DIRS})
+include_directories(${QALCULATE_INCLUDE_DIRS})
+
 link_directories(${GTKMM_LIBRARY_DIRS})
+link_directories(${QALCULATE__LIBRARY_DIRS})
+
 
 add_executable(${PROJECT_NAME} ${MAIN_SRC})
 
 target_link_libraries(${PROJECT_NAME} ${GTKMM_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${QALCULATE_LIBRARIES})
