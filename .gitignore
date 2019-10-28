@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# CMake common build folder
+build/*
