@@ -1,6 +1,7 @@
 #ifndef BLACK_BOARD_MAIN_WINDOW_H
 #define BLACK_BOARD_MAIN_WINDOW_H
 
+#include "input_widget.h"
 #include <gtkmm.h>
 
 namespace blackboard
@@ -11,14 +12,13 @@ namespace blackboard
         MainWindow();
         ~MainWindow();
 
-        Gtk::TextView *get_input_widget();
+        Glib::RefPtr<Gtk::TextBuffer> get_input_buffer();
         Gtk::TextView *get_output_widget();
 
     private:
         Gtk::HPaned paned;
-        Gtk::ScrolledWindow in;
         Gtk::ScrolledWindow out;
-        Gtk::TextView input;
+        InputWidget input;
         Gtk::TextView output;
     };
 }

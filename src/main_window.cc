@@ -5,8 +5,7 @@ blackboard::MainWindow::~MainWindow() = default;
 blackboard::MainWindow::MainWindow()
     : Window()
 {
-    in.add(input);
-    paned.add1(in);
+    paned.add1(input);
 
     out.add(output);
     paned.add2(out);
@@ -14,9 +13,9 @@ blackboard::MainWindow::MainWindow()
     this->add(paned);
 }
 
-Gtk::TextView *blackboard::MainWindow::get_input_widget()
+Glib::RefPtr<Gtk::TextBuffer> blackboard::MainWindow::get_input_buffer()
 {
-    return &input;
+    return input.get_buffer();
 }
 
 Gtk::TextView *blackboard::MainWindow::get_output_widget()
