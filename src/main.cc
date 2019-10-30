@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 
     main.resize(800, 600);
 
-    in_buf = main.get_input_widget()->get_buffer();
+    in_buf = main.get_input_buffer();
     out_buf = main.get_output_widget()->get_buffer();
 
     in_buf->signal_changed().connect(sigc::ptr_fun(&calculate));
