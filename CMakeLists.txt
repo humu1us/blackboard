@@ -30,3 +30,7 @@ add_executable(${PROJECT_NAME} ${MAIN_SRC})
 
 target_link_libraries(${PROJECT_NAME} ${GTKMM_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} ${QALCULATE_LIBRARIES})
+
+enable_testing()
+add_subdirectory(test)
+add_test(var_processor test/var_processor)
