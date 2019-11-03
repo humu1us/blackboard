@@ -1,4 +1,5 @@
 #include "var_processor.h"
+#include <cctype>
 
 
 namespace blackboard
@@ -40,8 +41,12 @@ void blackboard::VarProcessor::Impl::replace(std::string &cmd)
             if (pos == std::string::npos)
                 continue;
 
-            if (pos > 0 && !ispunct(cmd[pos - 1]) && !isspace(cmd[pos - 1]))
+            if (pos > 0
+                && !std::ispunct(cmd[pos - 1])
+                && !std::isspace(cmd[pos - 1]))
+            {
                 continue;
+            }
             cmd.replace(pos, name.size(), value);
             replaced = true;
         }
