@@ -74,10 +74,8 @@ void simple_replace()
     for (unsigned i = 0; i < commands.size(); ++i)
     {
         vp.replace(commands[i]);
-
-        assert(commands[i] == results[i]);
-
         std::cout << commands[i]  << " = " << results[i] << "\n";
+        assert(commands[i] == results[i]);
     }
 }
 
