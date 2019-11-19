@@ -1,5 +1,5 @@
-#ifndef BLACK_BOARD_MAIN_WINDOW_H
-#define BLACK_BOARD_MAIN_WINDOW_H
+#ifndef BLACKBOARD_MAIN_WINDOW_H
+#define BLACKBOARD_MAIN_WINDOW_H
 
 #include "input_widget.h"
 #include <gtkmm.h>
