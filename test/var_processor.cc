@@ -7,7 +7,7 @@
 void update_vars()
 {
     std::cout << "Update vars:\n";
-    std::vector<blackboard::VarProcessor::VarList> vars = {
+    std::vector<bb::VarProcessor::VarList> vars = {
         {
             {"a", "1"},
             {"foo", "22"},
@@ -26,7 +26,7 @@ void update_vars()
         },
     };
 
-    blackboard::VarProcessor vp;
+    bb::VarProcessor vp;
     int i = 0;
 
     for (auto &v : vars)
@@ -56,7 +56,7 @@ void simple_replace()
         "a - 3"
     };
 
-    blackboard::VarProcessor::VarList vars = {
+    bb::VarProcessor::VarList vars = {
         {"a", "1"},
         {"foo", "22"},
         {"bar", "44"}
@@ -68,7 +68,7 @@ void simple_replace()
         "1 - 3"
     };
 
-    blackboard::VarProcessor vp;
+    bb::VarProcessor vp;
     vp.update(vars);
 
     for (unsigned i = 0; i < commands.size(); ++i)
@@ -88,7 +88,7 @@ void complex_replace()
         "x*2a - 3+s"
     };
 
-    blackboard::VarProcessor::VarList vars = {
+    bb::VarProcessor::VarList vars = {
         {"bar", "zx"},
         {"zx", "p"},
         {"foo", "1"},
@@ -103,7 +103,7 @@ void complex_replace()
         "x*2a - 3+20"
     };
 
-    blackboard::VarProcessor vp;
+    bb::VarProcessor vp;
     vp.update(vars);
 
     for (unsigned i = 0; i < commands.size(); ++i)
@@ -118,13 +118,13 @@ void add()
 {
     std::cout << "\nAdd:\n";
 
-    blackboard::VarProcessor::VarList vars = {
+    bb::VarProcessor::VarList vars = {
         {"a", "1"},
         {"foo", "22"},
         {"bar", "44"}
     };
 
-    blackboard::VarProcessor vp;
+    bb::VarProcessor vp;
 
     for (const auto &[name, value] : vars)
         vp.add(name, value);
@@ -140,13 +140,13 @@ void erase()
 {
     std::cout << "\nErase:\n";
 
-     blackboard::VarProcessor::VarList vars = {
+     bb::VarProcessor::VarList vars = {
         {"a", "1"},
         {"foo", "22"},
         {"bar", "44"}
     };
 
-    blackboard::VarProcessor vp;
+    bb::VarProcessor vp;
     vp.update(vars);
 
     vp.erase("foo");

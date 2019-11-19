@@ -48,7 +48,7 @@ void calculate()
 int main(int argc, char **argv)
 {
     auto app = Gtk::Application::create(argc, argv);
-    blackboard::MainWindow main;
+    bb::MainWindow main;
 
     main.resize(800, 600);
 

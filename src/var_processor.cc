@@ -2,7 +2,7 @@
 #include <cctype>
 
 
-namespace blackboard
+namespace bb
 {
     class VarProcessor::Impl
     {
@@ -18,17 +18,17 @@ namespace blackboard
 }
 
 // Internal implementation
-blackboard::VarProcessor::Impl::Impl()
+bb::VarProcessor::Impl::Impl()
 {
 }
 
-void blackboard::VarProcessor::Impl::update(const VarList &vars)
+void bb::VarProcessor::Impl::update(const VarList &vars)
 {
     for (auto &[name, value] : vars)
         variables[name] = value;
 }
 
-void blackboard::VarProcessor::Impl::replace(std::string &cmd)
+void bb::VarProcessor::Impl::replace(std::string &cmd)
 {
     bool replaced;
 
@@ -54,7 +54,7 @@ void blackboard::VarProcessor::Impl::replace(std::string &cmd)
     while (replaced);
 }
 
-void blackboard::VarProcessor::Impl::erase(const std::string &name)
+void bb::VarProcessor::Impl::erase(const std::string &name)
 {
     auto it = variables.find(name);
     if (it == variables.end())
@@ -65,36 +65,36 @@ void blackboard::VarProcessor::Impl::erase(const std::string &name)
 
 // Public API
 
-blackboard::VarProcessor::~VarProcessor() = default;
+bb::VarProcessor::~VarProcessor() = default;
 
-blackboard::VarProcessor::VarProcessor()
+bb::VarProcessor::VarProcessor()
     : pimpl(std::make_unique<Impl>())
 {
 }
 
 
-void blackboard::VarProcessor::update(const VarList &vars)
+void bb::VarProcessor::update(const VarList &vars)
 {
     pimpl->update(vars);
 }
 
-void blackboard::VarProcessor::add(const std::string &name,
+void bb::VarProcessor::add(const std::string &name,
                                    const std::string &value)
 {
     pimpl->variables.insert({name, value});
 }
 
-void blackboard::VarProcessor::replace(std::string &cmd)
+void bb::VarProcessor::replace(std::string &cmd)
 {
     pimpl->replace(cmd);
 }
 
-void blackboard::VarProcessor::erase(const std::string &name)
+void bb::VarProcessor::erase(const std::string &name)
 {
     pimpl->erase(name);
 }
 
-blackboard::VarProcessor::VarList &blackboard::VarProcessor::get_vars() const
+bb::VarProcessor::VarList &bb::VarProcessor::get_vars() const
 {
     return pimpl->variables;
 }

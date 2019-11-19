@@ -1,8 +1,8 @@
 #include "main_window.h"
 
-blackboard::MainWindow::~MainWindow() = default;
+bb::MainWindow::~MainWindow() = default;
 
-blackboard::MainWindow::MainWindow()
+bb::MainWindow::MainWindow()
     : Window()
 {
     paned.add1(input);
@@ -13,12 +13,12 @@ blackboard::MainWindow::MainWindow()
     this->add(paned);
 }
 
-Glib::RefPtr<Gtk::TextBuffer> blackboard::MainWindow::get_input_buffer()
+Glib::RefPtr<Gtk::TextBuffer> bb::MainWindow::get_input_buffer()
 {
     return input.get_buffer();
 }
 
-Gtk::TextView *blackboard::MainWindow::get_output_widget()
+Gtk::TextView *bb::MainWindow::get_output_widget()
 {
     return &output;
 }

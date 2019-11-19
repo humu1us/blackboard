@@ -1,11 +1,11 @@
-#ifndef BLACK_BOARD_VAR_PROCESSOR_H
-#define BLACK_BOARD_VAR_PROCESSOR_H
+#ifndef BLACKBOARD_VAR_PROCESSOR_H
+#define BLACKBOARD_VAR_PROCESSOR_H
 
 #include <memory>
 #include <unordered_map>
 #include <string>
 
-namespace blackboard
+namespace bb
 {
     class VarProcessor
     {
