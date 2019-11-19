@@ -1,5 +1,5 @@
-#ifndef BLACK_BOARD_INPUT_WIDGET_H
-#define BLACK_BOARD_INPUT_WIDGET_H
+#ifndef BLACKBOARD_INPUT_WIDGET_H
+#define BLACKBOARD_INPUT_WIDGET_H
 
 #include <gtkmm/scrolledwindow.h>
 
