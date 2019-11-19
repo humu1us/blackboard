@@ -2,7 +2,7 @@
 
 #include <gtkmm/textview.h>
 
-namespace blackboard
+namespace bb
 {
     class InputWidget::Impl
     {
@@ -15,22 +15,22 @@ namespace blackboard
 
 // Internal implementation
 
-blackboard::InputWidget::Impl::Impl()
+bb::InputWidget::Impl::Impl()
 {
 }
 
 // Public API
 
-blackboard::InputWidget::~InputWidget() = default;
+bb::InputWidget::~InputWidget() = default;
 
-blackboard::InputWidget::InputWidget()
+bb::InputWidget::InputWidget()
     : ScrolledWindow()
     , pimpl(std::make_unique<Impl>())
 {
     this->add(pimpl->tv);
 }
 
-Glib::RefPtr<Gtk::TextBuffer> blackboard::InputWidget::get_buffer()
+Glib::RefPtr<Gtk::TextBuffer> bb::InputWidget::get_buffer()
 {
     return pimpl->tv.get_buffer();
 }
