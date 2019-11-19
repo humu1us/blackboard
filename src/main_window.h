@@ -4,7 +4,7 @@
 #include "input_widget.h"
 #include <gtkmm.h>
 
-namespace blackboard
+namespace bb
 {
     class MainWindow : public Gtk::Window
     {

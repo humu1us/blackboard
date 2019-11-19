@@ -5,7 +5,7 @@
 
 #include <memory>
 
-namespace blackboard
+namespace bb
 {
     class InputWidget : public Gtk::ScrolledWindow
     {
