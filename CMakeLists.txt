@@ -23,7 +23,7 @@ include_directories(${GTKMM_INCLUDE_DIRS})
 include_directories(${QALCULATE_INCLUDE_DIRS})
 
 link_directories(${GTKMM_LIBRARY_DIRS})
-link_directories(${QALCULATE__LIBRARY_DIRS})
+link_directories(${QALCULATE_LIBRARY_DIRS})
 
 
 add_executable(${PROJECT_NAME} ${MAIN_SRC})
