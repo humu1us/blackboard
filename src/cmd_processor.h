@@ -10,7 +10,7 @@ namespace bb
     {
     public:
         CMDProcessor();
-        virtual ~CMDProcessor();
+        ~CMDProcessor();
         std::string process(const std::string &cmd);
 
     private:
