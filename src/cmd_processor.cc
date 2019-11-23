@@ -10,25 +10,25 @@ namespace bb
         Impl();
         std::string process(const std::string &cmd);
 
-        Calculator *calc;
+        Calculator calc;
     };
 }
 
 // Internal implementation
 
 bb::CMDProcessor::Impl::Impl()
-    : calc(new Calculator())
+    : calc(Calculator())
 {
-    calc->useIntervalArithmetic(false);
-    calc->loadExchangeRates();
-    calc->loadGlobalCurrencies();
-    calc->loadGlobalDefinitions();
-    calc->loadLocalDefinitions();
+    calc.useIntervalArithmetic(false);
+    calc.loadExchangeRates();
+    calc.loadGlobalCurrencies();
+    calc.loadGlobalDefinitions();
+    calc.loadLocalDefinitions();
 }
 
 std::string bb::CMDProcessor::Impl::process(const std::string &cmd)
 {
-    return calc->calculateAndPrint(calc->unlocalizeExpression(cmd));
+    return calc.calculateAndPrint(calc.unlocalizeExpression(cmd));
 }
 
 // Public API
