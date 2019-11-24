@@ -17,7 +17,7 @@ namespace bb
 // Internal implementation
 
 bb::CMDProcessor::Impl::Impl()
-    : calc(Calculator())
+    : calc()
 {
     calc.useIntervalArithmetic(false);
     calc.loadExchangeRates();
